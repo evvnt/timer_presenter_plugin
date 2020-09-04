@@ -2,6 +2,7 @@
      class="v-plugin v-timer"
      data-plugin-callback='Timer'
      data-end-time="<%= comp.end_time %>"
-     data-expired-message="<%= comp.expired_message %>">
+     data-expired-message="<%= comp.expired_message %>"
+     data-schedule=<%= URI.escape(comp.schedule.to_json) %>>
   <span class="time-display"></span>
 </div>
