@@ -3,6 +3,9 @@
      data-plugin-callback='Timer'
      data-end-time="<%= comp.end_time %>"
      data-expired-message="<%= comp.expired_message %>"
-     data-schedule=<%= URI.escape(comp.schedule.to_json) %>>
+     data-redirect-url="<%= URI.encode(comp.redirect_url) %>"
+     data-redirect-params=<%= URI.encode(comp.redirect_params.to_json) %>
+     data-delete-url="<%= URI.encode(comp.delete_url) %>"
+     data-delete-params=<%= URI.encode(comp.delete_params.to_json) %>>
   <span class="time-display"></span>
 </div>
