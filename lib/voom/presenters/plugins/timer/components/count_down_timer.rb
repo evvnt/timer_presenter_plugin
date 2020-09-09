@@ -6,7 +6,7 @@ module Voom
       module Timer
         module Components
           class CountDownTimer < DSL::Components::EventBase
-            attr_reader :end_time, :redirect_url, :redirect_params, :delete_url, :delete_params, :expired_message
+            attr_reader :redirect_url, :redirect_params, :delete_url, :delete_params, :expired_message
 
             def initialize(end_time, **attribs, &block)
               @end_time = end_time
@@ -17,6 +17,10 @@ module Voom
               @expired_message = attribs.delete(:expired_message) { 'EXPIRED' }
               super(type: :count_down_timer, **attribs, &block)
               expand!
+            end
+
+            def end_time
+              @end_time.strftime("%Y-%m-%dT%k:%M:%S%:z")
             end
           end
         end
