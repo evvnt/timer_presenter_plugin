@@ -20,7 +20,7 @@ module Voom
             end
 
             def end_time
-              @end_time.strftime("%Y-%m-%dT%k:%M:%S%:z")
+              @end_time.strftime("%Y-%m-%dT%H:%M:%S%:z")
             end
           end
         end
