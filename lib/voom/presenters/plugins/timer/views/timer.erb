@@ -6,6 +6,10 @@
      data-redirect-url="<%= URI.encode(comp.redirect_url) %>"
      data-redirect-params=<%= URI.encode(comp.redirect_params.to_json) %>
      data-delete-url="<%= URI.encode(comp.delete_url) %>"
-     data-delete-params=<%= URI.encode(comp.delete_params.to_json) %>>
-  <span class="time-display"></span>
+     data-delete-params=<%= URI.encode(comp.delete_params.to_json) %>
+     data-color="<%= comp.safe_color %>"
+     data-warn-color="<%= comp.warn_color %>">
+  <%= erb(:"components/icon", :locals => {comp: comp.icon, class_name: 'mdc-chip__icon mdc-chip__icon--leading' }) if comp.icon %>
+  <span class="time-display" <% if comp.icon %>style="padding-left: 5px;"<% end %>></span>
+  <%= erb :"components/tooltip", :locals => {comp: comp.tooltip, parent_id: comp.id} %>
 </div>

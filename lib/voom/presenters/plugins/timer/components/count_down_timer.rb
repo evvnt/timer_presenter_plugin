@@ -1,12 +1,15 @@
-require 'voom/presenters/dsl/components/event_base'
+require 'voom/presenters/dsl/components/typography'
+# require 'voom/presenters/dsl/components/mixins/icons'
 
 module Voom
   module Presenters
     module Plugins
       module Timer
         module Components
-          class CountDownTimer < DSL::Components::EventBase
-            attr_reader :redirect_url, :redirect_params, :delete_url, :delete_params, :expired_message
+          class CountDownTimer < DSL::Components::Typography
+
+            attr_reader :redirect_url, :redirect_params, :delete_url, :delete_params, :expired_message,
+                        :safe_color, :warn_color
 
             def initialize(end_time, **attribs, &block)
               @end_time = end_time
@@ -15,6 +18,8 @@ module Voom
               @delete_url = attribs.delete(:delete_url) { nil }
               @delete_params = attribs.delete(:delete_params) { {} }
               @expired_message = attribs.delete(:expired_message) { 'EXPIRED' }
+              @safe_color = attribs.delete(:safe_color) { 'blue' }
+              @warn_color = attribs.delete(:warn_color) { 'red' }
               super(type: :count_down_timer, **attribs, &block)
               expand!
             end
