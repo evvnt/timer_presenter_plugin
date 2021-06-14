@@ -1,1 +1,1 @@
-require_relative 'voom/presenters/plugins/timer'
+# intentionally left blank

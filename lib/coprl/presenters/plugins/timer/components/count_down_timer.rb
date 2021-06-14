@@ -1,7 +1,6 @@
-require 'voom/presenters/dsl/components/typography'
-# require 'voom/presenters/dsl/components/mixins/icons'
+require 'coprl/presenters/dsl/components/typography'
 
-module Voom
+module Coprl
   module Presenters
     module Plugins
       module Timer

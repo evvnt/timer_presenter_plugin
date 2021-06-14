@@ -1,32 +1,34 @@
-# TimerPresenterPlugin
+# Timer Presenter Plugin
 
-Javascript time component for the Presenters POM DSL
+A [COPRL](http://github.com/coprl/coprl) presenter plugin that timer
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'timer_presenter_plugin'
+gem 'timer_presenter_plugin', git: 'https://github.com/coprl/timer_presenter_plugin', require: false
 ```
 
 And then execute:
 
-    $ bundle install
+    $ bundle
 
-Or install it yourself as:
 
-    $ gem install timer_presenter_plugin
+## Usage in POMs
 
-## Usage
+Declare the plugin in your pom, `plugin :timer`.
 
-TODO: Write usage instructions here
+TODO: Add an example POM and describe your plugin here
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/timer_presenter_plugin.
-
+Bug reports and pull requests are welcome on GitHub at https://github.com/coprl/timer_presenter_plugin.
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
+## Code of Conduct
+
+Everyone interacting in the COPRL project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/coprl/coprl/blob/master/CODE-OF-CONDUCT.md).

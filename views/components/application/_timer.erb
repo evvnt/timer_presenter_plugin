@@ -9,7 +9,7 @@
      data-delete-params=<%= URI.encode(comp.delete_params.to_json) %>
      data-color="<%= comp.safe_color %>"
      data-warn-color="<%= comp.warn_color %>">
-  <%= erb(:"components/icon", :locals => {comp: comp.icon, class_name: 'mdc-chip__icon mdc-chip__icon--leading' }) if comp.icon %>
+  <%= partial("components/icon", :locals => {comp: comp.icon, class_name: 'mdc-chip__icon mdc-chip__icon--leading' }) if comp.icon %>
   <span class="time-display" <% if comp.icon %>style="padding-left: 5px;"<% end %>></span>
-  <%= erb :"components/tooltip", :locals => {comp: comp.tooltip, parent_id: comp.id} %>
+  <%= partial "components/tooltip", :locals => {comp: comp.tooltip, parent_id: comp.id} %>
 </div>
