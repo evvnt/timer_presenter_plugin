@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/coprl/timer_presenter_plugin/compare/v1.0.0...v1.0.1) (2021-06-18)
+
+
+### Bug Fixes
+
+* cleaned up deprecation warnings for URI.encode ([5901fd1](https://github.com/coprl/timer_presenter_plugin/commit/5901fd1a368ae7b293c0b87f58ebd01a24a38573))
+
 # 1.0.0 (2021-06-14)
 
 
