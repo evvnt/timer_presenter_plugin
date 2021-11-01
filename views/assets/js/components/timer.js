@@ -46,8 +46,8 @@ class Timer {
         xhr.onreadystatechange = () => {
           if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status >= 200 && xhr.status < 300) {
-              let redirect = new URL(this.data.redirectUrl, location.origin);
-              const redirectParams = JSON.parse(decodeURIComponent(this.data.redirectParams));
+              const redirect = new URL(this.data.redirectUrl, location.origin);
+              const redirectParams = JSON.parse(this.data.redirectParams);
               for (const key in redirectParams) {
                 redirect.searchParams.append(key, redirectParams[key]);
               }
@@ -57,8 +57,8 @@ class Timer {
           }
         }
         ;
-        let formData = new FormData();
-        const deleteParams = JSON.parse(decodeURIComponent(this.data.deleteParams))
+        const formData = new FormData();
+        const deleteParams = JSON.parse(this.data.deleteParams)
         for (const [name, value] of Object.entries(deleteParams)) {
           formData.append(name, value);
         }

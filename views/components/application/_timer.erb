@@ -1,12 +1,12 @@
 <div id="<%= comp.id %>"
      class="v-plugin v-timer"
-     data-plugin-callback='Timer'
+     data-plugin-callback="Timer"
      data-end-time="<%= comp.end_time %>"
      data-expired-message="<%= comp.expired_message %>"
-     data-redirect-url="<%= URI.decode_www_form(comp.redirect_url) %>"
-     data-redirect-params=<%= URI.decode_www_form(expand_hash(comp.redirect_params).to_json) %>
-     data-delete-url="<%= URI.decode_www_form(comp.delete_url) %>"
-     data-delete-params=<%= URI.decode_www_form(expand_hash(comp.delete_params).to_json) %>
+     data-redirect-url="<%= h comp.redirect_url %>"
+     data-redirect-params="<%= h comp.redirect_params.to_json %>"
+     data-delete-url="<%= h comp.delete_url %>"
+     data-delete-params="<%= h comp.delete_params.to_json %>"
      data-color="<%= comp.safe_color %>"
      data-warn-color="<%= comp.warn_color %>">
   <%= partial("components/icon", :locals => {comp: comp.icon, class_name: 'mdc-chip__icon mdc-chip__icon--leading' }) if comp.icon %>
